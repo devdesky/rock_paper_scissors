@@ -23,8 +23,7 @@ console.log(computerPlay);
 let playerSelection = prompt("Rock, Paper, Scissors");
 
 console.log(playerSelection);
-
-//Match user input to textArray
+//Compare user input to computer
 if(textArray.indexOf(playerSelection.toLowerCase()) >= 0){
 
 } else {
@@ -34,25 +33,30 @@ if(textArray.indexOf(playerSelection.toLowerCase()) >= 0){
 function playRound(playerSelection, computerPlay) {
     let result;
     if (playerSelection === computerPlay) {
-        result = "Its a Tie";
-} else if (playerSelection < computerPlay); { 
-    result = "You Win";
-//} else if (playerSelection > computerPlay[1]) { //paper
-//    result = "You Win"
-//} else if (playerSelection < computerPlay[2]){ //scissors
+        result = "It's a Tie!"; 
+    } else if ((playerSelection === 'rock' && computerPlay === 'scissors') || (playerSelection === 'paper' && computerPlay === 'rock') || (playerSelection === 'scissors' && computerPlay === 'paper')) {
+        result = "You Win! " + playerSelection + " beats " + computerPlay;
+    } else  {
+        result = "You Lose! " + computerPlay + " beats " + playerSelection;
 
-   }   return result;
+    }
+    
+   return result;
 }
 
-console.log(playRound(playerSelection, computerPlay));
+//console.log(playRound(playerSelection, computerPlay));
 
+//play rock paper scissors 5 times in a row
 
-// check if user input is equal to randomArray
-/*if (textArray[randomArray] === playerSelection.toLowerCase()) {
-    true;
-    alert("Tie");
-} else {
-    false;
-    alert("You Lose");
+function game(playRound) {
+
+    playRound();
+    
 }
-*/
+console.log(game(playRound));
+
+
+
+//store the winner of each round
+//display winner of each round
+//display who the winner is after 5 rounds
